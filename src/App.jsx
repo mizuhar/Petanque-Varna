@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import LoginDemo from './components/Login'
 import Logout from './components/Logout'
+import NotFound from './components/NotFound'
 import PlayerCreate from './components/PlayerCreate'
 import PlayerDetails from './components/PlayerDetails'
 import PlayerEdit from './components/PlayerEdit'
@@ -25,6 +26,7 @@ function App() {
             <Header></Header>
             <Routes>
               <Route path={'/'} element={<Home/>}/>
+              <Route path={'*'} element={<NotFound/>}/>
               <Route path={'/about'} element={<AboutUs/>}/>
 
             <Route element={<AuthGuard/>}>
