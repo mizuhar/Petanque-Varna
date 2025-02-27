@@ -19,7 +19,7 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
 })
 
     return (
-        <>
+        <div style={{marginLeft:"15em",marginTop:"7em"}}>
         <br />
         <br />
         <br />
@@ -95,6 +95,6 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
     </Register>
 
     </form>
-        </>
+        </div>
     )
 }

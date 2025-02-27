@@ -7,7 +7,7 @@ export default function AboutUs(){
         <br />
         <br />
         <br />
-        <h1>About Us</h1>
+        <h1 style={{textAlign:"center"}}>About Us</h1>
         <br />
         <br />
         <br />
@@ -19,16 +19,18 @@ export default function AboutUs(){
         
 
         </p>
-        <section style={{textAlign:"center",display:"block"}}>
-            <h1 style={{fontSize:"35px",color:'orange'}}>We are champions from petanque club Varna!</h1>
+        <br />
+        <br />
+            <h1 style={{fontSize:"43px",color:'orange',marginBottom:"2em",marginLeft:"-0.5em",fontFamily:"cursive",width:"200%"}}>We are champions from petanque club Varna!</h1>
+        <section style={{textAlign:"center",display:"flex"}}>
             <ul>
-                <img style={{width:"500px", margin:"5px",borderRadius:"10%"}}  src={"public/img/8.JPG"} alt="pic1" />
-                <img style={{width:"300px", margin:"5px",borderRadius:"10%"}}  src={"public/img/2.JPG" }alt="pic2" />
-                <img style={{width:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/3.JPG"} alt="pic3" />
-                <img style={{width:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/4.JPG" }alt="pic3" />
-                <img style={{width:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/6.JPG"} alt="pic3" />
-                <img style={{width:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/7.JPG"} alt="pic3" />
-                <img style={{width:"350px", margin:"5px",borderRadius:"10%"}} src={"public/img/1.JPG"} alt="pic3" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}}  src={"public/img/8.JPG"} alt="pic1" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}}  src={"public/img/2.JPG" }alt="pic2" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/3.JPG"} alt="pic3" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/4.JPG" }alt="pic3" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/6.JPG"} alt="pic3" />
+                <img style={{width:"300px",height:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/7.JPG"} alt="pic3" />
+                <img style={{width:"350px",height:"300px", margin:"5px",borderRadius:"10%"}} src={"public/img/1.JPG"} alt="pic3" />
             </ul>
         </section>
         </>

@@ -91,7 +91,7 @@ export default function PlayerEdit(){
                 <br />
                 <input  className="btn submit" 
                         type="submit" 
-                        value="Create Player" />
+                        value="Update" />
             </div>
         </form>
     </section>

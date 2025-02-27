@@ -17,7 +17,7 @@ export default function PlayersItem({
         <br />
        
        
-        <img style={{width:"200px",borderRadius:"10px",marginLeft:"2em"}} src={img} alt="pic1" />
+        <img style={{width:"200px",height:"250px",borderRadius:"10px",marginLeft:"2em"}} src={img} alt="pic1" />
         <br />
         <br />
         <div style={{marginLeft:'2.1em'}}>

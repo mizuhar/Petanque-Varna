@@ -17,11 +17,11 @@ const { values,onChange,onSubmit,onReset} = useForm(loginSubmitHandler,{
 })
 console.log(values);
     return (
-        <>
+        <div style={{marginLeft:"15em",marginTop:"7em"}}>
         <br />
         <br />
         <br />
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} >
    <Login >
       <Render>
         {({ fields, buttons, blocks}) => {
@@ -72,6 +72,6 @@ console.log(values);
     </Login>
 
     </form>
-        </>
+        </div>
     )
 }
