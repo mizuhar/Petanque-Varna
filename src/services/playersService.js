@@ -7,6 +7,19 @@ export const getAll = async () => {
 
    return  await request.get(baseUrl)
 }
+export const getLatest = async ()=> {
+
+   const query = new URLSearchParams({
+        sortBy: `_createdOn desc`,
+        offset: 0,
+        pageSize: 3
+   }
+
+   )
+
+  return  await request.get(`${baseUrl}?${query}`)
+
+}
 export const getOne = async (playerId) => {
 
    return  await request.get(`${baseUrl}/${playerId}`)

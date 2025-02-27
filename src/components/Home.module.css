@@ -1,0 +1,24 @@
+.player{
+    display: flex;
+    
+    
+    gap: 0.5em;
+    
+}
+.home{
+    justify-content:space-between;
+}
+
+.buttons {
+    background-color: rgb(193, 193, 225);
+    text-decoration: none;
+    color:black;
+    height: 10%;
+    width:20%;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 70%;
+    margin-bottom: 2em;
+    margin-left: 5em;
+}
