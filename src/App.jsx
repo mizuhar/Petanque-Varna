@@ -2,6 +2,7 @@ import { Routes,Route,Link } from 'react-router-dom'
 import styles from './App.module.css'
 import AboutUs from './components/AboutUs'
 import { AuthProvider } from './components/context/AuthContext'
+import Footer from './components/Footer'
 import AuthGuard from './components/guards/AuthGuard'
 import GuestGuard from './components/guards/GuestGuards'
 import Header from './components/Header'
@@ -46,6 +47,7 @@ function App() {
             </Route>
             </Routes>
     </AuthProvider>
+     <Footer></Footer>
     </body>
     </>
   )
