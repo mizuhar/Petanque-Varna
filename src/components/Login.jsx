@@ -27,9 +27,9 @@ console.log(values);
         {({ fields, buttons, blocks}) => {
           return (
             <div>
-              <header>
+             
                 {blocks.logo} {blocks.title}
-              </header>
+             
               <div>
                 <label>{fields.email}</label>
               </div>

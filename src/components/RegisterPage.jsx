@@ -29,9 +29,9 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
         {({ fields, buttons, blocks}) => {
           return (
             <div>
-              <header>
+              
                 {blocks.logo} {blocks.title}
-              </header>
+             
               <div>
                 <label>{fields.email}</label>
               </div>

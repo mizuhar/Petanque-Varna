@@ -8,6 +8,7 @@ export default function NotFound() {
             textAlign: "center",
             marginBottom: "1.5em",
             marginTop: "1.5em",
+           
           }}
         >
           Not Found!

@@ -1,5 +1,4 @@
 import { Routes,Route,Link } from 'react-router-dom'
-import styles from './App.module.css'
 import AboutUs from './components/AboutUs'
 import { AuthProvider } from './components/context/AuthContext'
 import Footer from './components/Footer'
@@ -21,10 +20,12 @@ import RegisterPage from './components/RegisterPage'
 function App() {
 
   return (
-    <>
-    <body className={styles.body}>
+  
+ <>
+            <body>
     <AuthProvider>
-            <Header></Header>
+      
+            <Header/>
             <Routes>
               <Route path={'/'} element={<Home/>}/>
               <Route path={'*'} element={<NotFound/>}/>
@@ -46,10 +47,12 @@ function App() {
                   <Route path={'/register'} element={<RegisterPage/>}/>
             </Route>
             </Routes>
+            <Footer></Footer>
+         
     </AuthProvider>
-     <Footer></Footer>
-    </body>
-    </>
+            </body>
+   
+            </>
   )
 }
 

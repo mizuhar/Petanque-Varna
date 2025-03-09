@@ -8,7 +8,9 @@ export default function Header(){
 
 
     return(
-        <>
+     
+        <div>
+
              {/* {isAuthenticated && 
             <>
          <p style={{fontSize:'27px',marginLeft:'-5em', fontWeight:'bold'}}>Current user: {username}</p>
@@ -36,7 +38,8 @@ export default function Header(){
             }
 
         </nav>
-        </>
+        </div>
+       
     )
 }
 

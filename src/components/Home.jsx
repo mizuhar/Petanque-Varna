@@ -18,11 +18,11 @@ useEffect(() => {
 }, []);
 
     return(
-        <section id="welcome">
+        <section>
         <br />
         <br />
         <br />
-        <p></p>
+       
         <h1 style={{color:'wheat',fontSize:'51px',marginTop:'1em',marginBottom:"2.5em",width:"200%"}}>{username ? `${username}, welcome to petanque Varna!`:'Welcome to petanque Varna!'} </h1>
         <br />
                 <h1 style={{marginLeft:"4.5em",marginBottom:"1em",fontSize:"43px",fontFamily:"cursive",color:"yellow"}}>Newest Players</h1>
