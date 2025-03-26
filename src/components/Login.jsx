@@ -52,21 +52,24 @@ console.log(values);
       </Login.Block>
 
       <Login.Input 
+      style={{marginTop:"5px",padding:"5px",borderRadius:"7px"}}
            name="email" 
-           placeholder="please input email" 
+           placeholder="please enter email" 
            value={values['email']}
            onChange={onChange}
       />
+    
       <Login.Input 
+      style={{marginTop:"5px",padding:"5px",borderRadius:"7px"}}
            name="password"
            placeholder="please enter password" 
            value={values['password']}
            onChange={onChange}
        />
-      <Login.Button name="submit" type="submit" style={{marginRight:'5px',padding:"5px",cursor:'pointer'}}>
+      <Login.Button name="submit" type="submit" style={{marginRight:'5px',marginTop:"5px", padding:"7px",cursor:'pointer',borderRadius:"7px"}}>
         Submit
       </Login.Button>
-      <Login.Button name="reset" type="reset" onClick={onReset} style={{marginRight:'5px',padding:"5px",cursor:'pointer'}}>
+      <Login.Button name="reset" type="reset" onClick={onReset} style={{marginLeft:'39px',padding:"7px",paddingLeft:"15px",paddingRight:"15px", cursor:'pointer',borderRadius:"7px"}}>
         Reset
       </Login.Button>
     </Login>

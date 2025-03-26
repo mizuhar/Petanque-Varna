@@ -87,13 +87,14 @@ const removeHandler = async () =>{
         <br />
        
         <div className="details-comments">
-                    <h2>Comments:</h2>
+                    <h2 >Comments:</h2>
+                    <br />
                     <ul>
                         
                         {comments.map(({_id, text, owner:  { username } }) => (
-                            <li key={_id} className="comment" style={{fontSize:'18px',color:'white'}}>
+                            <span key={_id} className="comment" style={{fontSize:'18px',color:'white'}}>
                                 <p>{ username }: { text } </p>
-                            </li>
+                            </span>
                         ))}
                     </ul>
 

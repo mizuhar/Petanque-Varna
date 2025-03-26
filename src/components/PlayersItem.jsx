@@ -13,8 +13,10 @@ export default function PlayersItem({
 
     return (
         <section style={{display:"inline-block",margin:"10px"}}>
+            <br />
+            <br />
         <h1 style={{marginLeft:"2em"}}>{title}</h1>
-        <br />
+   
        
        
         <img style={{width:"200px",height:"250px",borderRadius:"10px",marginLeft:"2em"}} src={img} alt="pic1" />

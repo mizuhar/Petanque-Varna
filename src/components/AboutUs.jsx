@@ -27,9 +27,9 @@ export default function AboutUs(){
         <section style={{textAlign:"center",display:"flex"}}>
             <ul >
                 <img  src={"public/img/8.JPG"} alt="pic1" />
-                <img  src={"public/img/2.JPG"}alt="pic2" />
+                <img  src={"public/img/2.JPG"} alt="pic2" />
                 <img  src={"public/img/3.JPG"} alt="pic3" />
-                <img  src={"public/img/4.JPG"}alt="pic3" />
+                <img  src={"public/img/4.JPG"} alt="pic3" />
                 <img  src={"public/img/6.JPG"} alt="pic3" />
                 <img  src={"public/img/7.JPG"} alt="pic3" />
                 <img  src={"public/img/1.JPG"} alt="pic3" />

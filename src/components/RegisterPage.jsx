@@ -57,6 +57,7 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
       </Register.Block>
 
       <Register.Input 
+      style={{marginTop:"5px",padding:"5px",borderRadius:"7px"}}
            name="email" 
            placeholder="please input email" 
            value={values['email']}
@@ -67,6 +68,7 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
       <br />
       <br />
       <Register.Input 
+      style={{marginTop:"5px",padding:"5px",borderRadius:"7px"}}
            name="password"
            placeholder="please enter password" 
            value={values['password']}
@@ -77,6 +79,7 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
        <br />
        <br />
       <Register.Input 
+      style={{marginTop:"5px",padding:"5px",borderRadius:"7px"}}
            name="confirmpassword"
            placeholder="please confirm password" 
            value={values['confirmpassword']}
@@ -86,10 +89,10 @@ const { values, onChange, onSubmit,onReset } = useForm(registerSubmitHandler,{
        <br />
        <br />
        <br />
-      <Register.Button name="submit" type="submit" style={{marginRight:'5px',padding:"5px",cursor:'pointer'}}>
+      <Register.Button name="submit" type="submit" style={{marginRight:'5px',marginTop:"5px", padding:"7px",cursor:'pointer',borderRadius:"7px"}}>
         Submit
       </Register.Button>
-      <Register.Button name="reset" type="reset" onClick={onReset} style={{marginRight:'5px',padding:"5px",cursor:'pointer'}}>
+      <Register.Button name="reset" type="reset" onClick={onReset} style={{marginLeft:'39px',padding:"7px",paddingLeft:"15px",paddingRight:"15px", cursor:'pointer',borderRadius:"7px"}}>
         Reset
       </Register.Button>
     </Register>
