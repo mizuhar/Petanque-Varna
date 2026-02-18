@@ -2,39 +2,29 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "./context/AuthContext";
 import styles from './Header.module.css'
-export default function Header(){
+export default function Header() {
+  const { isAdmin } = useContext(AuthContext);
 
-    const { isAuthenticated } = useContext(AuthContext)
+  return (
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link className={styles.buttons} to="/">Home</Link>
+        <Link className={styles.buttons} to="/about">About Us</Link>
 
-
-    return(
-     
-        <div>
-
-          
-        <nav style={{marginTop:'-17em'}}>
-       
-            
-         <Link className={styles.buttons} to='/'>Home</Link>
-         <Link className={styles.buttons} to='/about'>About Us</Link>
-            {isAuthenticated && 
+        {isAdmin && (
           <>
-          <Link className={styles.buttons} to='/players'>Players</Link>
-          <Link className={styles.buttons} to='/players/create'>New Player</Link>
-          <Link className={styles.buttons} to='/logout'>Logout</Link>
-          
+            <Link className={styles.buttons} to="/players">Players</Link>
+            <Link className={styles.buttons} to="/players/create">New Player</Link>
+            <Link className={styles.buttons} to="/logout">Logout</Link>
           </>
-            }
-            {!isAuthenticated && 
-            <>
-            <Link className={styles.buttons} to='/login'>Admin Login</Link>
-            
-            </>
-            }
+        )}
 
-        </nav>
-        </div>
-       
-    )
+        {!isAdmin && (
+          <Link className={styles.buttons} to="/login">Admin Login</Link>
+        )}
+      </nav>
+    </header>
+  );
 }
+
 

@@ -1,13 +1,36 @@
+ nav {
+  margin-top: 0;
+}
 .buttons {
-    background-color: rgb(193, 193, 225);
-    text-decoration: none;
-    color:black;
-    height: 10%;
-    width:20%;
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    opacity: 70%;
-    
-    margin-left: 4em;
+  text-decoration: none;
+  background: #F0C808;          /* retro yellow */
+  color: #111;
+  padding: 8px 16px;
+  border: 3px solid #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.buttons:hover {
+  background: #D64545;          /* retro red */
+  color: white;
+  transform: translateY(-2px);
+}
+
+.header {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  background: #111;
+  padding: 10px 14px;
+  border: 3px solid #000;
 }
