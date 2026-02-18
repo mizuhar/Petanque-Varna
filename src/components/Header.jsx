@@ -11,11 +11,7 @@ export default function Header(){
      
         <div>
 
-             {/* {isAuthenticated && 
-            <>
-         <p style={{fontSize:'27px',marginLeft:'-5em', fontWeight:'bold'}}>Current user: {username}</p>
-            </>
-            } */}
+          
         <nav style={{marginTop:'-17em'}}>
        
             
@@ -31,8 +27,7 @@ export default function Header(){
             }
             {!isAuthenticated && 
             <>
-            <Link className={styles.buttons} to='/login'>Login</Link>
-            <Link className={styles.buttons} to='/register'>Register</Link>
+            <Link className={styles.buttons} to='/login'>Admin Login</Link>
             
             </>
             }

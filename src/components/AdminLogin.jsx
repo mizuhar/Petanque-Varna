@@ -7,7 +7,7 @@ import  {AuthContext}  from './context/AuthContext';
 
 
 
-export default function LoginDemo(){
+export default function AdminLogin(){
 
 const { loginSubmitHandler } = useContext(AuthContext)
 

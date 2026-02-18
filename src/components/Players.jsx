@@ -19,7 +19,7 @@ export default function Players(){
         <br />
         <br />
         <br />
-       {players.map((player) => (<PlayersItem key={player._id} {...player}/> ))}
+       {players.map(player => <PlayersItem key={player._id} {...player}/>)}
       
        </section>  
     )
