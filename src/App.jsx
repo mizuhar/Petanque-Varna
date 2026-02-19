@@ -1,60 +1,67 @@
-import { Routes,Route,Link } from 'react-router-dom'
-import AboutUs from './components/AboutUs'
-import { AuthProvider } from './components/context/AuthContext'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Home from './components/Home'
-import Logout from './components/Logout'
-import NotFound from './components/NotFound'
-import PlayerCreate from './components/PlayerCreate'
-import PlayerDetails from './components/PlayerDetails'
-import PlayerEdit from './components/PlayerEdit'
-import Players from './components/Players'
-import AdminLogin from './components/AdminLogin'
-import AdminDashboard from './components/admin/AdminDashboard'
-import AdminGuard from './components/guards/AdminGuard'
+import { Routes, Route } from "react-router-dom";
 
+import { AuthProvider } from "./components/context/AuthContext";
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+import AdminLogin from "./components/AdminLogin";
+import NotFound from "./components/NotFound";
+import Logout from "./components/Logout";
+
+// ✅ New Public Pages
+import Tournaments from "./components/Tournaments";
+import News from "./components/News";
+import Gallery from "./components/Gallery";
+
+// ✅ Admin
+import AdminDashboard from "./components/admin/AdminDashboard";
+import AdminGuard from "./components/guards/AdminGuard";
+
+// ✅ Admin CRUD (ако още ги ползваме)
+import Players from "./components/Players";
+import PlayerDetails from "./components/PlayerDetails";
+import PlayerCreate from "./components/PlayerCreate";
+import PlayerEdit from "./components/PlayerEdit";
 
 function App() {
-
   return (
-  
- <>
-            
     <AuthProvider>
       <div className="page">
-            <Header/>
-            <Routes>
+        <Header />
 
-  {/* Public */}
-  <Route path="/" element={<Home />} />
-  <Route path="/about" element={<AboutUs />} />
-  <Route path="/login" element={<AdminLogin />} />
+        <Routes>
+          {/* 🌍 Public */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/tournaments" element={<Tournaments />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/login" element={<AdminLogin />} />
 
-  {/* Admin Only */}
-  <Route element={<AdminGuard />}>
-      <Route path="/admin" element={<AdminDashboard />} />
+          {/* 🔐 Admin Only */}
+          <Route element={<AdminGuard />}>
+            <Route path="/admin" element={<AdminDashboard />} />
 
-      <Route path="/players" element={<Players />} />
-      <Route path="/players/:id" element={<PlayerDetails />} />
-      <Route path="/players/create" element={<PlayerCreate />} />
-      <Route path="/players/edit/:id" element={<PlayerEdit />} />
-      <Route path="/logout" element={<Logout />} />
-  </Route>
+            {/* Admin CRUD */}
+            <Route path="/players" element={<Players />} />
+            <Route path="/players/:id" element={<PlayerDetails />} />
+            <Route path="/players/create" element={<PlayerCreate />} />
+            <Route path="/players/edit/:id" element={<PlayerEdit />} />
 
-  {/* 404 */}
-  <Route path="*" element={<NotFound />} />
+            <Route path="/logout" element={<Logout />} />
+          </Route>
 
-</Routes>
-</div>
-            <Footer></Footer>
-         
+          {/* 🚫 404 */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+
+      <Footer />
     </AuthProvider>
-           
-   
-            </>
-  )
+  );
 }
 
-export default App
+export default App;

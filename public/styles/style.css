@@ -9,3 +9,17 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('/img/9.jpg');
+  opacity: 0.12;
+  pointer-events: none;
+}
+/* .page {
+    
+  min-height: 100vh;
+  padding: 2rem 3rem;
+} */
+

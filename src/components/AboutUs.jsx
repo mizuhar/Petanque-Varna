@@ -26,13 +26,13 @@ export default function AboutUs(){
             <h1 style={{fontSize:"43px",color:'orange',marginBottom:"2em",marginLeft:"-0.5em",fontFamily:"cursive",width:"200%"}}>We are champions from petanque club Varna!</h1>
         <section style={{textAlign:"center",display:"flex"}}>
             <ul >
-                <img  src={"public/img/8.JPG"} alt="pic1" />
-                <img  src={"public/img/2.JPG"} alt="pic2" />
-                <img  src={"public/img/3.JPG"} alt="pic3" />
-                <img  src={"public/img/4.JPG"} alt="pic3" />
-                <img  src={"public/img/6.JPG"} alt="pic3" />
-                <img  src={"public/img/7.JPG"} alt="pic3" />
-                <img  src={"public/img/1.JPG"} alt="pic3" />
+                <img  src="/img/8.jpg" alt="pic1" />
+                <img  src="/img/2.jpg" alt="pic2" />
+                <img  src="/img/3.jpg" alt="pic3" />
+                <img  src="/img/4.jpg" alt="pic3" />
+                <img  src="/img/6.jpg" alt="pic3" />
+                <img  src="/img/7.jpg" alt="pic3" />
+                <img  src="/img/1.jpg" alt="pic3" />
             </ul>
         </section>
         </div>

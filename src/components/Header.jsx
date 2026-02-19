@@ -1,24 +1,30 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "./context/AuthContext";
-import styles from './Header.module.css'
+import styles from "./Header.module.css";
+
 export default function Header() {
   const { isAdmin } = useContext(AuthContext);
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
+        {/* Public */}
         <Link className={styles.buttons} to="/">Home</Link>
         <Link className={styles.buttons} to="/about">About Us</Link>
+        <Link className={styles.buttons} to="/tournaments">Tournaments</Link>
+        <Link className={styles.buttons} to="/news">News</Link>
+        <Link className={styles.buttons} to="/gallery">Gallery</Link>
 
+        {/* Admin Only */}
         {isAdmin && (
           <>
-            <Link className={styles.buttons} to="/players">Players</Link>
-            <Link className={styles.buttons} to="/players/create">New Player</Link>
+            <Link className={styles.buttons} to="/admin">Admin</Link>
             <Link className={styles.buttons} to="/logout">Logout</Link>
           </>
         )}
 
+        {/* Guest */}
         {!isAdmin && (
           <Link className={styles.buttons} to="/login">Admin Login</Link>
         )}
@@ -26,5 +32,3 @@ export default function Header() {
     </header>
   );
 }
-
-
