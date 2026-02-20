@@ -41,9 +41,13 @@ const login = async (email, password) => {
 
 
 
-  const logout = async () => {
-    await supabase.auth.signOut();
-  };
+const logoutHandler = async () => {
+  await supabase.auth.signOut();   // ✅ Supabase logout
+
+
+  navigate('/');
+};
+
 
   const context = {
     session,
@@ -51,7 +55,7 @@ const login = async (email, password) => {
     isAuthenticated: !!session,
     isAdmin: !!session, // Single Admin Mode (засега)
     login,
-    logout,
+    logoutHandler,
   };
 
   return (
