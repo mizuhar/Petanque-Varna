@@ -1,79 +1,64 @@
-import { createContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import usePersistedState from "../../hooks/usePersistedState"
-import * as authService from '../../services/authService'
+import { createContext, useEffect, useState } from "react";
+import { supabase } from "../../lib/supabaseClient";
+import { useNavigate } from "react-router-dom";
 
-
-const ADMIN_EMAIL = "admin@petanquevarna.com";
-
-export const AuthContext = createContext()
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  const [session, setSession] = useState(null);
+  const navigate = useNavigate()
+  useEffect(() => {
+    // Взимаме текущата сесия
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
 
-    const navigate = useNavigate()
-    const [isAdmin, setIsAdmin] = useState(false);
-    const [ auth, setAuth ]  = usePersistedState('auth', {})
+    // Listener за login/logout
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setSession(session);
+      }
+    );
 
-    const loginSubmitHandler =  async ({email,password}) => {
+    return () => listener.subscription.unsubscribe();
+  }, []);
 
-        if (email !== ADMIN_EMAIL) {
-            alert("Access denied. Admins only.");
-            return;
-        }
+const login = async (email, password) => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-        try {
-            const result = await authService.login(email,password)
-            setAuth(result)
-            setIsAdmin(true)
+  if (error) throw error;
 
-            localStorage.setItem("accessToken", result.accessToken);
-            navigate('/admin')
-            
-        } catch (error) {
-             alert("Login failed");
-            
-        }
+  if (!data.session) {
+    throw new Error("No active session. Check email confirmation.");
+  }
 
-
-    
-        localStorage.setItem('accessToken',result.accessToken)
-
-
-         navigate('/')
-    
-    }
-   
-    const logoutHandler = () =>{
-
-        localStorage.removeItem('accessToken')
-
-        setAuth({})
-        setIsAdmin(false);
-        navigate('/')
-    }
-
-const context = {
-
-    loginSubmitHandler,
-    logoutHandler,
-    userId: auth._id,
-    username: auth.username || auth.email,
-    email: auth.email,
-    isAuthenticated: !!auth.accessToken,
-    isAdmin
-
-}
+  setSession(data.session);
+  navigate("/admin");
+};
 
 
 
-return (
-   < AuthContext.Provider value= { context }>
+  const logout = async () => {
+    await supabase.auth.signOut();
+  };
 
-       {children}
+  const context = {
+    session,
+    user: session?.user,
+    isAuthenticated: !!session,
+    isAdmin: !!session, // Single Admin Mode (засега)
+    login,
+    logout,
+  };
 
-   </AuthContext.Provider>
-)
+  return (
+    <AuthContext.Provider value={context}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
 
-}
-
-export default AuthContext
+export default AuthContext;

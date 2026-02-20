@@ -17,8 +17,10 @@ import News from "./components/News";
 import Gallery from "./components/Gallery";
 
 // ✅ Admin
+
 import AdminDashboard from "./components/admin/AdminDashboard";
 import AdminGuard from "./components/guards/AdminGuard";
+import AdminNews from "./components/admin/AdminNews";
 
 // ✅ Admin CRUD (ако още ги ползваме)
 import Players from "./components/Players";
@@ -44,7 +46,7 @@ function App() {
           {/* 🔐 Admin Only */}
           <Route element={<AdminGuard />}>
             <Route path="/admin" element={<AdminDashboard />} />
-
+            <Route path="/admin/news" element={<AdminNews />} />
             {/* Admin CRUD */}
             <Route path="/players" element={<Players />} />
             <Route path="/players/:id" element={<PlayerDetails />} />
