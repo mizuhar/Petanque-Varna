@@ -1,0 +1,47 @@
+.dashboard {
+    margin-top: 1em;
+  padding: 3rem;
+  background: var(--retro-cream);
+  min-height: 80vh;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 120px;
+  background: white;
+
+  border: 4px solid var(--retro-dark);
+  box-shadow: 5px 5px 0 var(--retro-dark);
+
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--retro-dark);
+
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 7px 0 var(--retro-dark);
+}

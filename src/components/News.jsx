@@ -36,6 +36,7 @@ export default function News() {
       <div className={styles.grid}>
         {articles.map(article => (
           <div key={article.id} className={styles.card}>
+            
             <span className={styles.badge}>{article.category}</span>
 
             <h2>{article.title}</h2>

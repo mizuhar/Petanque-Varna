@@ -3,14 +3,14 @@
   max-width: 1000px;
   filter: contrast(0.95) saturate(0.9);
   padding: 3rem;
-background-blend-mode: multiply;
+  background-blend-mode: multiply;
   background-image:
     linear-gradient(rgba(136, 123, 83, 0.94), rgba(101, 91, 61, 0.94)),
     url('/img/10.jpg');
-
+  
   background-size: cover;
   background-position: center;
-
+  
   border: 5px solid var(--retro-dark);
   box-shadow: 10px 10px 0px var(--retro-dark);
 }
@@ -43,7 +43,7 @@ background-blend-mode: multiply;
   overflow: hidden;
   border: 3px solid var(--retro-dark);
   box-shadow: 5px 5px 0px var(--retro-dark);
-
+  
   transition: 0.2s ease;
 }
 .badge {
@@ -69,4 +69,17 @@ background-blend-mode: multiply;
   font-size: clamp(22px, 2.5vw, 28px);
   text-wrap: balance;
 }
+button {
+  padding: 8px 18px;
+
+  border: 3px solid var(--retro-dark);
+  background: var(--retro-yellow);
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.15s ease;
+}
+
 

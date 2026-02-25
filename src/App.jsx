@@ -27,6 +27,8 @@ import Players from "./components/Players";
 import PlayerDetails from "./components/PlayerDetails";
 import PlayerCreate from "./components/PlayerCreate";
 import PlayerEdit from "./components/PlayerEdit";
+import AdminGallery from "./components/admin/AdminGallery";
+import AdminPlayers from "./components/admin/AdminPlayers";
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
           <Route element={<AdminGuard />}>
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/news" element={<AdminNews />} />
+            <Route path="/admin/gallery" element={<AdminGallery />} />
+           <Route path="/admin/players" element={<AdminPlayers />} />
             {/* Admin CRUD */}
             <Route path="/players" element={<Players />} />
             <Route path="/players/:id" element={<PlayerDetails />} />
