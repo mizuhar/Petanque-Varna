@@ -18,16 +18,7 @@ export default function News() {
     if (!error) setArticles(data);
   }
 
-  async function deleteArticle(id) {
-    const { error } = await supabase
-      .from("news")
-      .delete()
-      .eq("id", id);
-
-    if (!error) {
-      setArticles(state => state.filter(a => a.id !== id));
-    }
-  }
+  
 
   return (
     <section className={styles.newsPage}>
@@ -42,9 +33,7 @@ export default function News() {
             <h2>{article.title}</h2>
             <p>{article.content}</p>
 
-            <button onClick={() => deleteArticle(article.id)}>
-              Delete
-            </button>
+            
           </div>
         ))}
       </div>

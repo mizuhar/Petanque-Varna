@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
-import { Link } from "react-router-dom";
+import styles from "./Players.module.css";
 
 export default function Players() {
   const [players, setPlayers] = useState([]);
@@ -18,31 +18,42 @@ export default function Players() {
     if (!error) setPlayers(data);
   }
 
-  async function deletePlayer(id) {
-    const { error } = await supabase
-      .from("players")
-      .delete()
-      .eq("id", id);
-
-    if (!error) {
-      setPlayers(state => state.filter(p => p.id !== id));
-    }
-  }
-
   return (
-    <section>
-      <h1>Players</h1>
+    <section className={styles.playersPage}>
+      <h1 className={styles.title}>Meet Our Players</h1>
 
-      {players.map(player => (
-        <div key={player.id}>
-          <img src={player.img} alt={player.title} width="120" />
-          <h3>{player.title}</h3>
-          <p>{player.description}</p>
+      <div className={styles.grid}>
+  {players.map(player => (
+    <div key={player.id} className={styles.card}>
+      
+      <img
+        src={player.image_url}
+        alt={player.name}
+        className={styles.image}
+      />
 
-          <Link to={`/players/edit/${player.id}`}>Edit</Link>
-          <button onClick={() => deletePlayer(player.id)}>Delete</button>
-        </div>
-      ))}
+      <h3>{player.name}</h3>
+
+      {player.nickname && (
+        <span className={styles.nickname}>
+          "{player.nickname}"
+        </span>
+      )}
+
+      <p className={styles.description}>
+        {player.description}
+      </p>
+
+      {player.bio && (
+        <p className={styles.bio}>
+          {player.bio}
+        </p>
+      )}
+
+    </div>
+  ))}
+</div>
+
     </section>
   );
 }

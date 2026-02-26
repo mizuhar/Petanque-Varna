@@ -1,8 +1,11 @@
 .dashboard {
     margin-top: 1em;
   padding: 3rem;
-  background: var(--retro-cream);
+  border-radius: 5%;
   min-height: 80vh;
+   background-image:
+    linear-gradient(rgba(35, 34, 33, 0.94), rgba(219, 217, 211, 0.94)),
+    url('/img/11.jpg');
 }
 
 .title {

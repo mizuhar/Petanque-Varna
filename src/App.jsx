@@ -44,6 +44,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/login" element={<AdminLogin />} />
+            <Route path="/players" element={<Players />} />
 
           {/* 🔐 Admin Only */}
           <Route element={<AdminGuard />}>
@@ -52,7 +53,6 @@ function App() {
             <Route path="/admin/gallery" element={<AdminGallery />} />
            <Route path="/admin/players" element={<AdminPlayers />} />
             {/* Admin CRUD */}
-            <Route path="/players" element={<Players />} />
             <Route path="/players/:id" element={<PlayerDetails />} />
             <Route path="/players/create" element={<PlayerCreate />} />
             <Route path="/players/edit/:id" element={<PlayerEdit />} />

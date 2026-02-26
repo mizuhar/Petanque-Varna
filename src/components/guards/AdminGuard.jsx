@@ -6,7 +6,7 @@ export default function AdminGuard() {
     const { isAdmin } = useContext(AuthContext);
 
     if (!isAdmin) {
-        return <Navigate to="/login" replace />;
+        return <Navigate to="/" replace />;
     }
 
     return <Outlet />;
