@@ -57,8 +57,8 @@ function App() {
             <Route path="/players/create" element={<PlayerCreate />} />
             <Route path="/players/edit/:id" element={<PlayerEdit />} />
 
-            <Route path="/logout" element={<Logout />} />
           </Route>
+            <Route path="/logout" element={<Logout />} />
 
           {/* 🚫 404 */}
           <Route path="*" element={<NotFound />} />
