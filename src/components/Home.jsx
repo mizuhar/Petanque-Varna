@@ -1,6 +1,8 @@
 import styles from './Home.module.css';
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate()
   return (
     <section className={styles.hero}>
 
@@ -15,12 +17,12 @@ export default function Home() {
       </p>
 
       <div className={styles.actions}>
-        <button className={styles.ctaPrimary}>
-          Upcoming Tournaments
+        <button onClick={()=> navigate('/tournaments')} className={styles.ctaPrimary}>
+          View Upcoming Tournament
         </button>
 
-        <button className={styles.ctaSecondary}>
-          Club Gallery
+        <button onClick={()=> navigate('/gallery')} className={styles.ctaSecondary}>
+          Explore Gallery
         </button>
       </div>
 <section className={styles.tournaments}>

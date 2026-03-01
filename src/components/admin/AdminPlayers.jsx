@@ -29,7 +29,7 @@ export default function AdminPlayers() {
   }
 
   function onChange(e) {
-    setForm(state => ({
+    setForm((state) => ({
       ...state,
       [e.target.name]: e.target.value,
     }));
@@ -62,17 +62,19 @@ export default function AdminPlayers() {
 
       const { data, error } = await supabase
         .from("players")
-        .insert([{
-          name: form.name,
-          nickname: form.nickname,
-          bio: form.bio,
-          image_url: imageUrl,
-        }])
+        .insert([
+          {
+            name: form.name,
+            nickname: form.nickname,
+            bio: form.bio,
+            image_url: imageUrl,
+          },
+        ])
         .select();
 
       if (error) throw error;
 
-      setPlayers(state => [data[0], ...state]);
+      setPlayers((state) => [data[0], ...state]);
 
       setForm({
         name: "",
@@ -82,7 +84,6 @@ export default function AdminPlayers() {
       });
 
       setFile(null);
-
     } catch (err) {
       alert("Failed to create player");
       console.error(err);
@@ -91,13 +92,10 @@ export default function AdminPlayers() {
 
   // 🗑 DELETE
   async function deletePlayer(id) {
-    const { error } = await supabase
-      .from("players")
-      .delete()
-      .eq("id", id);
+    const { error } = await supabase.from("players").delete().eq("id", id);
 
     if (!error) {
-      setPlayers(state => state.filter(p => p.id !== id));
+      setPlayers((state) => state.filter((p) => p.id !== id));
     }
   }
 
@@ -122,10 +120,8 @@ export default function AdminPlayers() {
       .eq("id", editingPlayer.id);
 
     if (!error) {
-      setPlayers(state =>
-        state.map(p =>
-          p.id === editingPlayer.id ? editingPlayer : p
-        )
+      setPlayers((state) =>
+        state.map((p) => (p.id === editingPlayer.id ? editingPlayer : p)),
       );
 
       setShowModal(false);
@@ -179,21 +175,19 @@ export default function AdminPlayers() {
 
       {/* LIST */}
       <div className={styles.playersGrid}>
-        {players.map(player => (
+        {players.map((player) => (
           <div key={player.id} className={styles.card}>
-            <img src={player.image_url} alt={player.name} />
+            <div className={styles.imageWrapper}>
+              <img src={player.image_url} alt={player.name} />
+            </div>
             <h3>{player.name}</h3>
             <span>{player.nickname}</span>
             <p>{player.bio}</p>
 
             <div className={styles.actions}>
-              <button onClick={() => openEditModal(player)}>
-                Edit ✏️
-              </button>
+              <button onClick={() => openEditModal(player)}>Edit ✏️</button>
 
-              <button onClick={() => deletePlayer(player.id)}>
-                Delete 🗑
-              </button>
+              <button onClick={() => deletePlayer(player.id)}>Delete 🗑</button>
             </div>
           </div>
         ))}
@@ -208,7 +202,7 @@ export default function AdminPlayers() {
             <form onSubmit={updatePlayer}>
               <input
                 value={editingPlayer.name}
-                onChange={e =>
+                onChange={(e) =>
                   setEditingPlayer({
                     ...editingPlayer,
                     name: e.target.value,
@@ -218,7 +212,7 @@ export default function AdminPlayers() {
 
               <input
                 value={editingPlayer.nickname}
-                onChange={e =>
+                onChange={(e) =>
                   setEditingPlayer({
                     ...editingPlayer,
                     nickname: e.target.value,
@@ -228,7 +222,7 @@ export default function AdminPlayers() {
 
               <textarea
                 value={editingPlayer.bio}
-                onChange={e =>
+                onChange={(e) =>
                   setEditingPlayer({
                     ...editingPlayer,
                     bio: e.target.value,
@@ -238,7 +232,7 @@ export default function AdminPlayers() {
 
               <input
                 value={editingPlayer.image_url}
-                onChange={e =>
+                onChange={(e) =>
                   setEditingPlayer({
                     ...editingPlayer,
                     image_url: e.target.value,
@@ -248,9 +242,7 @@ export default function AdminPlayers() {
 
               <div className={styles.modalActions}>
                 <button type="submit">Save</button>
-                <button onClick={() => setShowModal(false)}>
-                  Cancel
-                </button>
+                <button onClick={() => setShowModal(false)}>Cancel</button>
               </div>
             </form>
           </div>
