@@ -1,38 +1,84 @@
- nav {
-  margin-top: 0;
+/* ===== MOBILE FIRST ===== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #111;
+  border-bottom: 3px solid #000;
 }
+
+/* top bar container */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+/* burger button */
+.menuToggle {
+  background: #F0C808;
+  border: 3px solid #000;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* nav links container (hidden by default on mobile) */
+.links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  background: #111;
+  border-top: 3px solid #000;
+}
+
+/* when menu is open */
+.links.active {
+  display: flex;
+}
+
+/* buttons */
 .buttons {
   text-decoration: none;
-  background: #F0C808;          /* retro yellow */
+  background: #F0C808;
   color: #111;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border: 3px solid #000;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: center;
   transition: all 0.2s ease;
 }
 
 .buttons:hover {
-  background: #D64545;          /* retro red */
+  background: #D64545;
   color: white;
   transform: translateY(-2px);
 }
+@media (min-width: 1024px) {
 
-.header {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  z-index: 10;
+  .nav {
+    justify-content: center;
+  }
+
+  .menuToggle {
+    display: none;
+  }
+
+  .links {
+    display: flex !important;
+    flex-direction: row;
+    gap: 14px;
+    border-top: none;
+    padding: 0;
+  }
+
 }
-
-.nav {
-  display: flex;
-  gap: 12px;
-  background: #111;
-  padding: 10px 14px;
-  border: 3px solid #000;
-}
-
-

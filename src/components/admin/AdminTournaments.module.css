@@ -1,0 +1,51 @@
+.adminPage {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--retro-cream);
+  border: 4px solid var(--retro-dark);
+  box-shadow: 6px 6px 0 var(--retro-dark);
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.form input,
+.form textarea {
+  padding: 10px;
+  border: 3px solid var(--retro-dark);
+  font-size: 16px;
+}
+
+.form button {
+  background: var(--retro-yellow);
+  align-self: center;
+  border: 3px solid var(--retro-dark);
+  padding: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border: 3px solid var(--retro-dark);
+  padding: 1rem;
+  box-shadow: 4px 4px 0 var(--retro-dark);
+}

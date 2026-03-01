@@ -4,7 +4,6 @@ import styles from "./AdminDashboard.module.css";
 export default function AdminDashboard() {
   return (
     <section className={styles.dashboard}>
-       
       <h1 className={styles.title}>Admin Panel</h1>
       <p className={styles.subtitle}>Manage website content</p>
 
@@ -19,6 +18,9 @@ export default function AdminDashboard() {
 
         <Link to="/admin/players" className={styles.card}>
           🏐 Players
+        </Link>
+        <Link to="/admin/tournaments" className={styles.card}>
+          🏆 Tournaments
         </Link>
 
         <Link to="/" className={styles.card}>
