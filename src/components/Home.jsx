@@ -13,24 +13,44 @@ export default function Home() {
   }, []);
   async function fetchHomeData() {
     setLoading(true);
+
     const today = new Date().toISOString();
-    // 1️⃣ Upcoming tournament
-    const { data: tournament } = await supabase
+
+    // 🔹 Try to get upcoming
+    const { data: upcomingData } = await supabase
       .from("tournaments")
       .select("*")
       .gte("date", today)
       .order("date", { ascending: true })
-      .limit(1)
-      .single();
+      .limit(1);
 
-    // 2️⃣ Latest news
+    let tournamentToShow = null;
+    let isPast = false;
+
+    if (upcomingData && upcomingData.length > 0) {
+      tournamentToShow = upcomingData[0];
+    } else {
+      // 🔹 If no upcoming, get latest past
+      const { data: pastData } = await supabase
+        .from("tournaments")
+        .select("*")
+        .lt("date", today)
+        .order("date", { ascending: false })
+        .limit(1);
+
+      if (pastData && pastData.length > 0) {
+        tournamentToShow = pastData[0];
+        isPast = true;
+      }
+    }
+
     const { data: newsData } = await supabase
       .from("news")
       .select("*")
       .order("created_at", { ascending: false })
       .limit(2);
 
-    setUpcoming(tournament || null);
+    setUpcoming({ ...tournamentToShow, isPast });
     setNews(newsData || []);
     setLoading(false);
   }
@@ -67,15 +87,27 @@ export default function Home() {
             <p>Loading...</p>
           ) : upcoming ? (
             <article className={styles.card}>
-              <span className={styles.cardBadge}>Upcoming</span>
+              <span
+                className={`${styles.cardBadge} ${
+                  upcoming.isPast ? styles.completed : ""
+                }`}
+              >
+                {upcoming.isPast ? "Completed" : "Upcoming"}
+              </span>
+
               <h3>{upcoming.title}</h3>
+
               <p>
                 {new Date(upcoming.date).toLocaleDateString()} •{" "}
                 {upcoming.location}
               </p>
             </article>
           ) : (
-            <p>No upcoming tournaments</p>
+            <article className={styles.card}>
+              <span className={styles.cardBadge}>No Events</span>
+              <h3>Stay tuned</h3>
+              <p>New tournaments will be announced soon.</p>
+            </article>
           )}
         </div>
       </section>
