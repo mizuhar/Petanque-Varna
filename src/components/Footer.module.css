@@ -1,0 +1,45 @@
+.footer {
+  margin-top: 4rem;
+  background: var(--retro-dark);
+  color: white;
+  padding: 2rem 1rem 1rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+}
+
+.column h3,
+.column h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.column a {
+  display: block;
+  text-decoration: none;
+  color: var(--retro-yellow);
+  margin-bottom: 6px;
+}
+
+.column a:hover {
+  text-decoration: underline;
+}
+
+.bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

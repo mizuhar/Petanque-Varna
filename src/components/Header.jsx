@@ -14,10 +14,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.nav}>
-        <button
-          className={styles.menuToggle}
-          onClick={() => setOpen(!open)}
-        >
+        <button className={styles.menuToggle} onClick={() => setOpen(!open)}>
           MENU
         </button>
       </div>
@@ -46,6 +43,9 @@ export default function Header() {
 
         <Link className={styles.buttons} to="/gallery" onClick={closeMenu}>
           Gallery
+        </Link>
+        <Link className={styles.buttons} to="/contact">
+          Contact
         </Link>
 
         {/* Admin Only */}

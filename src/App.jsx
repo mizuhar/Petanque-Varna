@@ -27,6 +27,7 @@ import Players from "./components/Players";
 import AdminGallery from "./components/admin/AdminGallery";
 import AdminPlayers from "./components/admin/AdminPlayers";
 import AdminTournaments from "./components/admin/AdminTournaments";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/tournaments" element={<Tournaments />} />
           <Route path="/news" element={<News />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<AdminLogin />} />
             <Route path="/players" element={<Players />} />
 
