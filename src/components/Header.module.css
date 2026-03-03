@@ -46,12 +46,14 @@
 /* buttons */
 .buttons {
   text-decoration: none;
-  background: #F0C808;
+  background: #d09c2b;
   color: #111;
   padding: 10px 16px;
   border: 3px solid #000;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: center;
@@ -59,7 +61,7 @@
 }
 
 .buttons:hover {
-  background: #D64545;
+  background: #6e6e90;
   color: white;
   transform: translateY(-2px);
 }

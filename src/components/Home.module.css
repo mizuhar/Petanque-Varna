@@ -7,7 +7,7 @@
   margin-top: 2rem;
   padding: 2rem 1.5rem;
 
-  background: var(--retro-red);
+  background: #6e6e90;
 
   border: 3px solid var(--retro-dark);
   box-shadow: 6px 6px 0 var(--retro-dark);
@@ -26,7 +26,7 @@
 
 .badge {
   display: inline-block;
-  background: var(--retro-yellow);
+  background: #d09c2b;
   color: var(--retro-dark);
 
   padding: 6px 14px;
@@ -74,7 +74,7 @@
 .ctaSecondary {
   width: 100%;
   text-align: center;
-
+  border-radius: 10px;
   border: 3px solid var(--retro-dark);
   padding: 12px 20px;
 
@@ -87,7 +87,7 @@
 }
 
 .ctaPrimary {
-  background: var(--retro-yellow);
+  background:  #d09c2b;
   color: var(--retro-dark);
 }
 
