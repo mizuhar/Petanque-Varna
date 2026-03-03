@@ -49,3 +49,12 @@
   padding: 1rem;
   box-shadow: 4px 4px 0 var(--retro-dark);
 }
+button{
+  margin-top: 5px;
+  background: var(--retro-yellow);
+  align-self: center;
+  border: 3px solid var(--retro-dark);
+  padding: 10px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+}

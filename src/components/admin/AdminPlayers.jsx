@@ -195,8 +195,8 @@ export default function AdminPlayers() {
 
       {/* MODAL */}
       {showModal && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modal}>
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
             <h2>Edit Player</h2>
 
             <form onSubmit={updatePlayer}>
