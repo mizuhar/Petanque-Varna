@@ -44,7 +44,7 @@ export default function Header() {
         <Link className={styles.buttons} to="/gallery" onClick={closeMenu}>
           Gallery
         </Link>
-        <Link className={styles.buttons} to="/contact">
+        <Link className={styles.buttons} to="/contact" onClick={closeMenu}>
           Contact
         </Link>
 

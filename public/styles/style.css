@@ -9,6 +9,24 @@ body {
     background-position: center;
     padding-top: 90px;
 }
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+
+  .content,
+  .about,
+  .page,
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
 
 /* .page {
     
