@@ -48,6 +48,7 @@ export default function Gallery() {
             key={photo.id}
             src={photo.image_url}
             alt={photo.caption}
+            loading="lazy"
             onClick={() => setActiveIndex(index)}
           />
         ))}

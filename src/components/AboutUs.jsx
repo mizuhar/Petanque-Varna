@@ -5,26 +5,26 @@ export default function AboutUs() {
     <section className={styles.about}>
       
       <div className={styles.hero}>
-        <h1 className={styles.title}>About Us</h1>
+        <h1 className={styles.title}>ЗА НАС</h1>
         <h2 className={styles.subtitle}>
-          We are champions from Petanque Club Varna!
+          Повече от клуб – общност!
         </h2>
       </div>
 
       <div className={styles.content}>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Libero reiciendis eaque repellat incidunt vitae minus recusandae laudantium,
-          voluptas quasi itaque sint impedit harum ducimus esse cupiditate
-          pariatur consequatur enim sapiente.
+          Петанк клуб Варна е създаден през 2015 година в град Варна от Пламен Николов с ясната идея да популяризира и развива спорта петанк в региона.
+
+От самото си създаване клубът обединява хора, които споделят любовта към стратегическата игра, честната конкуренция и силния отборен дух.
+
+Понастоящем председател на клуба е Пламен Николов, който активно работи за разширяване на общността и организирането на турнири, състезания и обучения.
+
+Нашите членове участват в регионални и национални турнири, като представят Варна достойно и с уважение към традициите на спорта.
+
+Петанк клуб Варна не е просто спортен клуб – това е място за приятелство, развитие и споделени моменти.
         </p>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Libero reiciendis eaque repellat incidunt vitae minus recusandae laudantium,
-          voluptas quasi itaque sint impedit harum ducimus esse cupiditate
-          pariatur consequatur enim sapiente.
-        </p>
+       
       </div>
 
       <div className={styles.imageWrapper}>
