@@ -20,7 +20,8 @@
 
 /* burger button */
 .menuToggle {
-  background: #F0C808;
+  background: #d09c2b;
+  border-radius: 10px;
   border: 3px solid #000;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
@@ -68,11 +69,14 @@
 @media (min-width: 1024px) {
 
   .nav {
+   
     justify-content: center;
+    
   }
 
   .menuToggle {
-    background: #d09c2b;
+    
+  
     display: none;
   }
 
