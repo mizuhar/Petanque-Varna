@@ -20,10 +20,25 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.nav}>
         <button className={styles.menuToggle} onClick={() => setOpen(!open)}>
-          MENU
+          {t("nav.menu")}
         </button>
-      </div>
+         <div style={{ marginLeft: "auto" }}>
+  <button onClick={() => {
+    i18n.changeLanguage("bg");
+    localStorage.setItem("lang", "bg");
+  }}>
+    🇧🇬
+  </button>
 
+  <button onClick={() => {
+    i18n.changeLanguage("en");
+    localStorage.setItem("lang", "en");
+  }}>
+    🇬🇧
+  </button>
+      </div>
+      </div>
+       
       <div className={`${styles.links} ${open ? styles.active : ""}`}>
         {/* Public */}
         <Link className={styles.buttons} to="/" onClick={closeMenu}>
@@ -72,21 +87,7 @@ export default function Header() {
             {t("nav.adminlogin")}
           </Link>
         )}
-        <div style={{ marginLeft: "auto" }}>
-  <button onClick={() => {
-    i18n.changeLanguage("bg");
-    localStorage.setItem("lang", "bg");
-  }}>
-    🇧🇬
-  </button>
 
-  <button onClick={() => {
-    i18n.changeLanguage("en");
-    localStorage.setItem("lang", "en");
-  }}>
-    🇬🇧
-  </button>
-</div>
       </div>
     </header>
   );
