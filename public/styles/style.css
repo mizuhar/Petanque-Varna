@@ -31,10 +31,8 @@ img {
   max-width: 100%;
   display: block;
 }
+h1, h2, h3 {
+  overflow-wrap: anywhere;
+}
 
-/* .page {
-    
-  min-height: 100vh;
-  padding: 2rem 3rem;
-} */
 

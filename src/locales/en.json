@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT US",
+    "players": "PLAYERS",
+    "tournaments": "TOURNAMENTS",
+    "news": "NEWS",
+    "gallery": "GALLERY",
+    "contact": "CONTACT",
+    "admin": "ADMIN",
+    "logout": "LOGOUT",
+    "adminlogin":"ADMINLOGIN"
+  }
+}

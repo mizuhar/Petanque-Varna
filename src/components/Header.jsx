@@ -2,8 +2,13 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "./context/AuthContext";
 import styles from "./Header.module.css";
+import { useTranslation } from "react-i18next";
+import i18n from "i18next";
+
+
 
 export default function Header() {
+  const { t } = useTranslation();
   const { isAdmin } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
@@ -22,41 +27,41 @@ export default function Header() {
       <div className={`${styles.links} ${open ? styles.active : ""}`}>
         {/* Public */}
         <Link className={styles.buttons} to="/" onClick={closeMenu}>
-          Home
+          {t("nav.home")}
         </Link>
 
         <Link className={styles.buttons} to="/about" onClick={closeMenu}>
-          About Us
+          {t("nav.about")}
         </Link>
 
         <Link className={styles.buttons} to="/players" onClick={closeMenu}>
-          Meet Our Players
+          {t("nav.players")}
         </Link>
 
         <Link className={styles.buttons} to="/tournaments" onClick={closeMenu}>
-          Tournaments
+          {t("nav.tournaments")}
         </Link>
 
         <Link className={styles.buttons} to="/news" onClick={closeMenu}>
-          News
+          {t("nav.news")}
         </Link>
 
         <Link className={styles.buttons} to="/gallery" onClick={closeMenu}>
-          Gallery
+          {t("nav.gallery")}
         </Link>
         <Link className={styles.buttons} to="/contact" onClick={closeMenu}>
-          Contact
+          {t("nav.contact")}
         </Link>
 
         {/* Admin Only */}
         {isAdmin && (
           <>
             <Link className={styles.buttons} to="/admin" onClick={closeMenu}>
-              Admin
+              {t("nav.admin")}
             </Link>
 
             <Link className={styles.buttons} to="/logout" onClick={closeMenu}>
-              Logout
+             {t("nav.logout")}
             </Link>
           </>
         )}
@@ -64,9 +69,24 @@ export default function Header() {
         {/* Guest */}
         {!isAdmin && (
           <Link className={styles.buttons} to="/login" onClick={closeMenu}>
-            Admin Login
+            {t("nav.adminlogin")}
           </Link>
         )}
+        <div style={{ marginLeft: "auto" }}>
+  <button onClick={() => {
+    i18n.changeLanguage("bg");
+    localStorage.setItem("lang", "bg");
+  }}>
+    🇧🇬
+  </button>
+
+  <button onClick={() => {
+    i18n.changeLanguage("en");
+    localStorage.setItem("lang", "en");
+  }}>
+    🇬🇧
+  </button>
+</div>
       </div>
     </header>
   );
