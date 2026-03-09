@@ -251,6 +251,8 @@
   .cards,
   .newsGrid {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+   max-width: calc(100% - 4px);
   }
 
 }
@@ -289,6 +291,8 @@
   .card,
   .newsCard {
     box-shadow: 2px 2px 0 var(--retro-dark);
+    width: 100%;
+    max-width: calc(100% - 4px);
   }
 
 }
