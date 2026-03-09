@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .newsPage {
   position: relative;
   max-width: 1200px;
@@ -14,6 +20,8 @@
 
   border: 4px solid var(--retro-dark);
   box-shadow: 6px 6px 0 var(--retro-dark);
+
+  overflow: hidden;
 }
 
 .newsPage::before {
@@ -29,12 +37,17 @@
   font-size: clamp(32px, 6vw, 56px);
   margin-bottom: 2rem;
   text-shadow: 2px 2px 0 white;
+
+  word-break: break-word;
 }
 
+
 /* MOBILE FIRST */
+
 .grid {
   display: grid;
   gap: 16px;
+  min-width: 0;
 }
 
 .card {
@@ -42,7 +55,13 @@
   padding: 1.2rem;
   border: 3px solid var(--retro-dark);
   box-shadow: 4px 4px 0 var(--retro-dark);
+
   transition: 0.2s ease;
+
+  min-width: 0;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .card:hover {
@@ -55,8 +74,10 @@
   background: var(--retro-yellow);
   padding: 4px 10px;
   border: 2px solid var(--retro-dark);
+
   font-family: 'Bebas Neue', sans-serif;
   font-size: 14px;
+
   margin-bottom: 8px;
 }
 
@@ -64,6 +85,8 @@
   font-size: clamp(20px, 4vw, 28px);
   line-height: 1.1;
   margin-bottom: 8px;
+
+  word-break: break-word;
 }
 
 .card p {
@@ -71,16 +94,24 @@
   line-height: 1.6;
 }
 
-/* Tablet */
+
+/* TABLET */
+
 @media (min-width: 768px) {
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
-/* Desktop */
+
+/* DESKTOP */
+
 @media (min-width: 1024px) {
+
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
