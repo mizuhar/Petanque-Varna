@@ -11,6 +11,10 @@
 
 .header {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
   top: 0;
   left: 0;
   width: 100%;
@@ -32,6 +36,7 @@
 /* burger button */
 
 .menuToggle {
+  margin-right: 10px;
   color: black;
   background: #d09c2b;
   border-radius: 10px;
@@ -52,16 +57,31 @@
 .links {
   display: none;
   flex-direction: column;
-  gap: 10px;
-
-  padding: 14px;
-  background: #111;
-
-  border-top: 3px solid #000;
-
+  gap: 12px;
+  transition: all 0.25s ease;
+  position: absolute;
+  top: 70px;
+  left: 0;
   width: 100%;
+
+  background: #111;
+  padding: 20px;
+}
+.langSwitch {
+  
+  display: flex;
+  gap: 5px;
 }
 
+.langSwitch button {
+  background: var(--retro-yellow);
+  border: 2px solid black;
+  padding: 4px 6px;
+  cursor: pointer;
+}
+.buttons {
+  white-space: nowrap;
+}
 /* when menu is open */
 
 .links.active {
@@ -123,9 +143,11 @@
     flex-direction: row;
     gap: 14px;
 
-    border-top: none;
-    padding: 0;
+    position: static;   /* ⭐ ВАЖНО */
+    width: auto;        /* ⭐ ВАЖНО */
+    background: none;   /* ⭐ ВАЖНО */
 
+    padding: 0;
     flex-wrap: wrap;
     justify-content: center;
   }
