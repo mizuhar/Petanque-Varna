@@ -244,12 +244,12 @@ CARDS GRID
 .cardBadge,
 .newsBadge {
   display: inline-block;
-  background: var(--retro-yellow);
+  background: #d09c2b;
   padding: 4px 10px;
 
   border: 2px solid var(--retro-dark);
   box-shadow: 1px 1px 0 var(--retro-dark);
-
+  
   font-family: 'Bebas Neue', sans-serif;
   font-size: 14px;
 
