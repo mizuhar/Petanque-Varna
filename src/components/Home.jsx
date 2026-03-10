@@ -59,7 +59,7 @@ export default function Home() {
       <div className={styles.badge}>Petanque Varna</div>
 
       <h1 className={styles.title}>
-        Welcome to <br /> Petanque Varna
+        Welcome to <br /> PETANQUE CLUB "VARNA"
       </h1>
 
       <p className={styles.subtitle}>Precision • Strategy • Tradition</p>

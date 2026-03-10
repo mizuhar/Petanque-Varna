@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/about</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/players</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/tournaments</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/news</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/gallery</loc>
+  </url>
+
+  <url>
+    <loc>https://petanque-varna.vercel.app/contact</loc>
+  </url>
+
+</urlset>
