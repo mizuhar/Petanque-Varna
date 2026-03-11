@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [upcoming, setUpcoming] = useState(null);
   const [news, setNews] = useState([]);
@@ -50,7 +52,7 @@ export default function Home() {
       .order("created_at", { ascending: false })
       .limit(2);
 
-    setUpcoming({ ...tournamentToShow, isPast });
+    setUpcoming({...tournamentToShow,isPast});
     setNews(newsData || []);
     setLoading(false);
   }
@@ -59,28 +61,28 @@ export default function Home() {
       <div className={styles.badge}>Petanque Varna</div>
 
       <h1 className={styles.title}>
-        Welcome to <br /> PETANQUE CLUB "VARNA"
+         {t("home.welcome")}
       </h1>
 
-      <p className={styles.subtitle}>Precision • Strategy • Tradition</p>
+      <p className={styles.subtitle}>{t("home.subtitle")}</p>
 
       <div className={styles.actions}>
         <button
           onClick={() => navigate("/tournaments")}
           className={styles.ctaPrimary}
         >
-          View Upcoming Tournament
+         {t("home.viewTournament")}
         </button>
 
         <button
           onClick={() => navigate("/gallery")}
           className={styles.ctaSecondary}
         >
-          Explore Gallery
+           {t("home.exploreGallery")}
         </button>
       </div>
       <section className={styles.tournaments}>
-        <h2 className={styles.sectionTitle}>Tournaments</h2>
+        <h2 className={styles.sectionTitle}>{t("home.tournaments")}</h2>
 
         <div className={styles.cards}>
           {loading ? (
@@ -105,14 +107,14 @@ export default function Home() {
           ) : (
             <article className={styles.card}>
               <span className={styles.cardBadge}>No Events</span>
-              <h3>Stay tuned</h3>
-              <p>New tournaments will be announced soon.</p>
+              <h3>{t("home.stayTuned")}</h3>
+              <p style={{fontSize:"32px",fontWeight:"bold"}}>{t("home.newTournament")}</p>
             </article>
           )}
         </div>
       </section>
       <section className={styles.news}>
-        <h2 className={styles.sectionTitle}>Latest News</h2>
+        <h2 className={styles.sectionTitle}>{t("home.news")}</h2>
 
         <div className={styles.newsGrid}>
           {loading ? (
@@ -126,7 +128,7 @@ export default function Home() {
               </article>
             ))
           ) : (
-            <p>No news yet</p>
+            <p style={{fontSize:"32px",fontWeight:"bold"}}>{t("home.noNewsYet")}</p>
           )}
         </div>
       </section>

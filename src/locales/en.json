@@ -11,5 +11,18 @@
     "admin": "ADMIN",
     "logout": "LOGOUT",
     "adminlogin":"ADMINLOGIN"
+  },
+  
+  "home": {
+    "welcome": "Welcome to Petanque Varna",
+    "subtitle": "Precision • Strategy • Tradition",
+    "viewTournament": "View Upcoming Tournament",
+    "exploreGallery": "Explore Gallery",
+    "tournaments":"TOURNAMENTS",
+    "news":"NEWS",
+    "stayTuned":"Stay Tuned",
+    "newTournament":"New tournaments will be announced soon.",
+    "noNewsYet":"No news yet."
   }
 }
+
