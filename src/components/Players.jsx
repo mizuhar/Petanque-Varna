@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import styles from "./Players.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Players() {
+  const { t } = useTranslation()
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function Players() {
 
   return (
     <section className={styles.playersPage}>
-      <h1 className={styles.title}>Meet Our Players</h1>
+      <h1 className={styles.title}>{t("players.meet")}</h1>
 
       <div className={styles.grid}>
   {players.map(player => (
