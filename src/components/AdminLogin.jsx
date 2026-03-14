@@ -6,8 +6,10 @@ import { AuthContext } from "./context/AuthContext";
 
 import styles from "./AdminLogin.module.css";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function AdminLogin() {
+  const {t} = useTranslation()
   const { login } = useContext(AuthContext);
   const [error, setError] = useState("");
 
@@ -57,7 +59,7 @@ export default function AdminLogin() {
               </Render>
 
               <Login.Block name="title" tagName="h1">
-                Admin Login
+                {t('admin.login')}
               </Login.Block>
 
               <Login.Input

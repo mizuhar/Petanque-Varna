@@ -44,6 +44,9 @@
   "seo": {
   "homeTitle": "Petanque Varna | Official Website",
   "contact":"Contact | Petanque Varna"
+},
+"admin":{
+  "login":"ADMIN LOGIN"
 }
 }
 
