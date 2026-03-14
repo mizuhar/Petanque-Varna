@@ -1,10 +1,21 @@
 import styles from "./Contact.module.css";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 
 export default function Contact() {
   const {t} = useTranslation()
   return (
+    <>
+    <Helmet>
+<title>{t("seo.contact")}</title>
+
+<meta
+name="description"
+content="Contact Petanque Varna club. Training location in Varna, Bulgaria."
+/>
+</Helmet>
+    
     <section className={styles.contactPage}>
       <h1 className={styles.title}>{t('contact.contactUs')}</h1>
 
@@ -37,5 +48,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }

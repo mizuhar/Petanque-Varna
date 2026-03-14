@@ -40,6 +40,10 @@
   "contact":{
       "contactUs":"Contact Us",
       "contact":"Feel free to reach out to us for tournaments, training or partnership inquiries."
-  }
+  },
+  "seo": {
+  "homeTitle": "Petanque Varna | Official Website",
+  "contact":"Contact | Petanque Varna"
+}
 }
 

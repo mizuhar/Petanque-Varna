@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <>
      <Helmet>
-      <title>Petanque Varna | Official Petanque Club</title>
+      <title>{t("seo.homeTitle")}</title>
 
       <meta
         name="description"
