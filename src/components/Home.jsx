@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -57,8 +58,26 @@ export default function Home() {
     setLoading(false);
   }
   return (
+    <>
+     <Helmet>
+      <title>Petanque Varna | Official Petanque Club</title>
+
+      <meta
+        name="description"
+        content="Official website of Petanque Varna. Discover tournaments, players, news and gallery."
+      />
+
+      <meta property="og:title" content="Petanque Varna" />
+      <meta
+        property="og:description"
+        content="Official website of Petanque Varna – tournaments, players and club news."
+      />
+      <meta property="og:image" content="/preview.jpg" />
+      <meta property="og:type" content="website" />
+    </Helmet>
+   
     <section className={styles.hero}>
-      <div className={styles.badge}>Petanque Varna</div>
+      <div className={styles.badge}>{t("home.petanque")}</div>
 
       <h1 className={styles.title}>
          {t("home.welcome")}
@@ -133,5 +152,6 @@ export default function Home() {
         </div>
       </section>
     </section>
+    </>
   );
 }
