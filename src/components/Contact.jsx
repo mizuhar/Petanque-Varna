@@ -1,12 +1,15 @@
 import styles from "./Contact.module.css";
+import { useTranslation } from "react-i18next";
+
 
 export default function Contact() {
+  const {t} = useTranslation()
   return (
     <section className={styles.contactPage}>
-      <h1 className={styles.title}>Contact Us</h1>
+      <h1 className={styles.title}>{t('contact.contactUs')}</h1>
 
       <p className={styles.subtitle}>
-        Feel free to reach out to us for tournaments, training or partnership inquiries.
+       {t("contact.contact")}
       </p>
 
       <div className={styles.grid}>

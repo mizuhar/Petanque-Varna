@@ -15,6 +15,7 @@
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(32px, 6vw, 56px);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* MOBILE FIRST GRID */

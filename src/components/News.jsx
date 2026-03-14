@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import styles from "./News.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function News() {
+  const {t} = useTranslation()
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export default function News() {
 
   return (
     <section className={styles.newsPage}>
-      <h1 className={styles.title}>Latest News</h1>
+      <h1 className={styles.title}>{t('home.news')}</h1>
 
       <div className={styles.grid}>
         {articles.map(article => (

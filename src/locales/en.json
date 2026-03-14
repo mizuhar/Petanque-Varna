@@ -22,7 +22,9 @@
     "news":"NEWS",
     "stayTuned":"Stay Tuned",
     "newTournament":"New tournaments will be announced soon.",
-    "noNewsYet":"No news yet."
+    "noNewsYet":"No news yet.",
+    "clubGallery":"Petanque Varna gallery"
+    
   },
   "about":{
     "aboutUs":"ABOUT US",
@@ -33,6 +35,10 @@
   },
   "players":{
     "meet":"MEET OUR PLAYERS"
+  },
+  "contact":{
+      "contactUs":"Contact Us",
+      "contact":"Feel free to reach out to us for tournaments, training or partnership inquiries."
   }
 }
 

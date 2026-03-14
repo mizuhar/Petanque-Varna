@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import styles from "./Tournaments.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Tournaments() {
+  const { t } = useTranslation()
   const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function Tournaments() {
 
   return (
     <section className={styles.page}>
-      <h1 className={styles.title}>Tournaments</h1>
+      <h1 className={styles.title}>{t("home.tournaments")}</h1>
 
       {upcoming.length > 0 && (
         <>

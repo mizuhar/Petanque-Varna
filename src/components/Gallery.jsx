@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import styles from "./Gallery.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Gallery() {
+  const {t} = useTranslation()
   const [photos, setPhotos] = useState([]);
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -40,7 +42,7 @@ export default function Gallery() {
 
   return (
     <section className={styles.galleryPage}>
-      <h1 className={styles.title}>Club Gallery</h1>
+      <h1 className={styles.title}>{t('home.clubGallery')}</h1>
 
       <div className={styles.photoWall}>
         {photos.map((photo, index) => (

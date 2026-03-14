@@ -37,7 +37,7 @@
   font-size: clamp(32px, 6vw, 56px);
   margin-bottom: 2rem;
   text-shadow: 2px 2px 0 white;
-
+  text-align: center;
   word-break: break-word;
 }
 
