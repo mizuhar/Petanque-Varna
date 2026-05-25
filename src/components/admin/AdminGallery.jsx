@@ -85,8 +85,7 @@ async function createImage(e) {
     .eq("id", id)
     .select();
 
-  console.log("Deleted data:", data);
-  console.log("Delete error:", error);
+ 
 
   if (error) {
     alert("Delete failed");
