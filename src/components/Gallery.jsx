@@ -8,9 +8,28 @@ export default function Gallery() {
   const [photos, setPhotos] = useState([]);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  useEffect(() => {
-    fetchGallery();
-  }, []);
+ useEffect(() => {
+  fetchGallery();
+
+  const channel = supabase
+    .channel("gallery-changes")
+    .on(
+      "postgres_changes",
+      {
+        event: "*",
+        schema: "public",
+        table: "gallery",
+      },
+      () => {
+        fetchGallery();
+      }
+    )
+    .subscribe();
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, []);
 
   useEffect(() => {
     function handleKey(e) {

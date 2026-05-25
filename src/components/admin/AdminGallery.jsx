@@ -78,16 +78,29 @@ async function createImage(e) {
 
 
   // 🗑 DELETE
-  async function deleteImage(id) {
-    const { error } = await supabase
-      .from("gallery")
-      .delete()
-      .eq("id", id);
+ async function deleteImage(id) {
+  const { data, error } = await supabase
+    .from("gallery")
+    .delete()
+    .eq("id", id)
+    .select();
 
-    if (!error) {
-      setImages(state => state.filter(img => img.id !== id));
-    }
+  console.log("Deleted data:", data);
+  console.log("Delete error:", error);
+
+  if (error) {
+    alert("Delete failed");
+    console.error(error);
+    return;
   }
+
+  if (!data || data.length === 0) {
+    alert("No image was deleted. Check RLS policies.");
+    return;
+  }
+
+  setImages(state => state.filter(img => img.id !== id));
+}
 
   // ✏️ EDIT
   function openEditModal(image) {
